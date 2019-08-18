@@ -48,7 +48,14 @@
                             <outlet property="delegate" destination="mWg-of-gal" id="Sni-YA-uzM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoey" id="NdC-WQ-5v8"/>
+                    <navigationItem key="navigationItem" title="Todoey" id="NdC-WQ-5v8">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="PVO-37-tif">
+                            <color key="tintColor" red="0.99990588430000005" green="1" blue="0.99988120790000001" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="AddButtonPressed:" destination="mWg-of-gal" id="PKT-2P-CPX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1t-l0-b7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
