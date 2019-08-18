@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Todoey
 //
-//  Created by Maciej Bałtowski on 16/08/2019.
+//  Created by MB on 16/08/2019.
 //
 
 import UIKit
