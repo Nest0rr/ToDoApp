@@ -11,9 +11,14 @@ class TableViewController: UITableViewController {
     
     var itemArray = ["Buy Oranges", "Call Mark", "Send a Parcel"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        if let items = defaults.array(forKey: "ToDoListArray") as? [String] {
+            itemArray = items
+        }
     }
     
     
@@ -39,9 +44,7 @@ class TableViewController: UITableViewController {
         
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
-            
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
@@ -58,6 +61,8 @@ class TableViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             //action being performed after pressing the button
             self.itemArray.append(textField.text!)
+            
+            self.defaults.set(self.itemArray, forKey: "ToDoListArray")
             
             self.tableView.reloadData()
         }
